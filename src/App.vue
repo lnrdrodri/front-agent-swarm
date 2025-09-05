@@ -1,7 +1,9 @@
 <template>
   <main>
     <div class="chat-container">
-      <h1>Chat</h1>
+      <div class="chat-header">
+        <img src="/logo.svg" alt="InfinitePay Logo" class="logo" />
+      </div>
       <div class="messages" ref="messagesScroll">
         <div
           v-for="(msg, index) in messages"
@@ -91,19 +93,32 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Open Sans";
 }
 
 main {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0e0e0e;
   color: #fff;
   height: 100vh;
   display: grid;
   place-items: center;
+}
+
+.chat-header {
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+img.logo {
+  width: 150px;
+  margin: 16px auto;
+  display: block;
 }
 
 .chat-container {
